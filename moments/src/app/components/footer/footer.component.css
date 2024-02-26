@@ -1,0 +1,10 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid darkgrey;
+}
+
+footer h3 {
+    margin-bottom: 1em;
+}

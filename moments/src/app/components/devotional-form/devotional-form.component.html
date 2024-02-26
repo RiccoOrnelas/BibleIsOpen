@@ -1,0 +1,26 @@
+<form (ngSubmit)="submit()" [formGroup]="devotionalForm" #FormDir="ngForm">
+    <div class="form-item">
+        <label for="title">Tema:</label>
+        <input id="title" placeholder="Coloque um Título" formControlName="title" required>
+    </div>
+    <div *ngIf="title.invalid && FormDir.submitted" class="validationError">
+        <p *ngIf="title.errors?.['required']">
+            Ooops.. O Tema é Obrigatório
+        </p>
+    </div>
+    <div class="form-item">
+        <label for="content">Conteudo</label>
+        <textarea placeholder="Conte o texto referência, e o que Deus te ensinou neste texto"
+            formControlName='description'></textarea>
+    </div>
+    <div *ngIf="content.invalid && FormDir.submitted" class="validationError">
+        <p *ngIf="content.errors?.['required']">
+            Ooops.. Você esqueceu do conteúdo!
+        </p>
+    </div>
+    <div class="form-item, folder">
+        <label for="img">Se desejar, coloque uma imagem que represente o seu tema!</label>
+        <input type="file" (change)="onFileSelected($event)" id="img">
+    </div>
+    <input type="submit" value="{{btnText}}">
+</form>

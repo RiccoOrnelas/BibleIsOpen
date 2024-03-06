@@ -10,6 +10,8 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewMomentsComponent } from './components/new-moments/new-moments.component';
 import { DevotionalFormComponent } from './components/devotional-form/devotional-form.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,17 @@ import { DevotionalFormComponent } from './components/devotional-form/devotional
     AboutComponent,
     HomeComponent,
     NewMomentsComponent,
-    DevotionalFormComponent
+    DevotionalFormComponent,
+    MessagesComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     provideClientHydration()

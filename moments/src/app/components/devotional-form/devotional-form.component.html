@@ -9,12 +9,12 @@
         </p>
     </div>
     <div class="form-item">
-        <label for="content">Conteudo</label>
+        <label for="description">Conteudo</label>
         <textarea placeholder="Conte o texto referência, e o que Deus te ensinou neste texto"
             formControlName='description'></textarea>
     </div>
-    <div *ngIf="content.invalid && FormDir.submitted" class="validationError">
-        <p *ngIf="content.errors?.['required']">
+    <div *ngIf="description.invalid && FormDir.submitted" class="validationError">
+        <p *ngIf="description.errors?.['required']">
             Ooops.. Você esqueceu do conteúdo!
         </p>
     </div>

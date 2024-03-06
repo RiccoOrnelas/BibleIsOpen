@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, input, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Moment } from '../../moments';
 @Component({
   selector: 'app-devotional-form',
@@ -15,22 +16,21 @@ export class DevotionalFormComponent implements OnInit {
     this.devotionalForm = new FormGroup({
       id: new FormControl(''),
       title: new FormControl('', [Validators.required]),
-      content: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
       image: new FormControl('', []),
     })
   }
   get title() {
     return this.devotionalForm.get("title")!
   }
-  get content() {
+  get description() {
     return this.devotionalForm.get("description")!
   }
 
   onFileSelected(event: any) {
-    const file: File = event.target.files[0]
-    this.devotionalForm.patchValue({ Image: File })
+    const file: File = event.target.files[0];
+    this.devotionalForm.patchValue({ image: event.target.files[0] });
   }
-
   submit() {
     if (this.devotionalForm.invalid) {
       return;

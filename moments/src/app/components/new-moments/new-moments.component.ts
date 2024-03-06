@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Moment } from '../../moments';
 import { MomentService } from '../../services/moment.service';
+import { MessagesService } from '../../services/messages.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-moments',
@@ -10,7 +12,7 @@ import { MomentService } from '../../services/moment.service';
 export class NewMomentsComponent implements OnInit {
   btnText = 'Compartilhar'
   ngOnInit(): void { }
-  constructor(private devotionalService: MomentService) {
+  constructor(private devotionalService: MomentService, private messageService: MessagesService, private router: Router) {
 
   }
   async createHandler(devotional: Moment) {
@@ -20,11 +22,16 @@ export class NewMomentsComponent implements OnInit {
     if (devotional.image) {
       formData.append('image', devotional.image)
     }
-    this.devotionalService.createMoment(formData).subscribe()
+    //to-do
+    //Enviar para o Service
+    await this.devotionalService.createMoment(formData).subscribe()
+    this.messageService.add('Glória a Deus! Devocional Criado com Sucesso!!')
+    this.router.navigate(['/'])
 
   }
-  //to-do
-  //Enviar para o Service
-  // Exibir mensagem 
+
+
+
+
   // Redirect
 }

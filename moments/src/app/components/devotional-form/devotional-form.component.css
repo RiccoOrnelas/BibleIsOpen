@@ -27,8 +27,6 @@ form {
     min-height: 15em;
 }
 
-
-
 input[type='submit'] {
     justify-content: center;
     align-items: center;
@@ -46,7 +44,6 @@ input[type='submit'] {
     font-weight: bold;
     height: auto;
     border: solid 2px transparent;
-
 }
 
 input[type='submit']:hover {

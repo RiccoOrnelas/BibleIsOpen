@@ -1,0 +1,14 @@
+.about-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content h3 {
+    color:
+        #118fd2;
+}

@@ -19,7 +19,7 @@ export class DevotionalPageComponent implements OnInit {
   faTimes: any = faTimes
   faEdit: any = faEdit
   faComment: any = faComment
-  constructor(private service: MomentService, private route: ActivatedRoute, private message: MessagesService) { }
+  constructor(private service: MomentService, private route: ActivatedRoute, private message: MessagesService, private router: Router) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
@@ -27,9 +27,9 @@ export class DevotionalPageComponent implements OnInit {
       this.moment = moment.data
     })
   }
-  Comment() {
 
-  }
+  Comment() { }
+
   async Delete() {
     const id = Number(this.route.snapshot.paramMap.get('id'))
     if (confirm("Voce Deseja mesmo Apagar este post?")) {
@@ -43,6 +43,8 @@ export class DevotionalPageComponent implements OnInit {
     }
   }
 
+  Edit() {
+    const id = this.moment?.id
+    return this.router.navigateByUrl(`devotional/edit/${id}`)
+  }
 }
-
-

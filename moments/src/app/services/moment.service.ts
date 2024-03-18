@@ -36,5 +36,11 @@ export class MomentService {
 
     return this.http.delete<Response<Moment>>(url)
   }
+  updateDevotional(id: number, formData: FormData): Observable<FormData> {
+    const url = `${this.apiUrl}/${id}`
+    this.router.navigateByUrl('/')
+
+    return this.http.put<FormData>(url, formData)
+  }
 }
 

@@ -12,6 +12,8 @@ import { NewMomentsComponent } from './components/new-moments/new-moments.compon
 import { DevotionalFormComponent } from './components/devotional-form/devotional-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DevotionalPageComponent } from './components/devotional-page/devotional-page.component';
+import { EditDevotionalComponent } from './components/edit-devotional/edit-devotional.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewMomentsComponent,
     DevotionalFormComponent,
     MessagesComponent,
+    DevotionalPageComponent,
+    EditDevotionalComponent,
 
   ],
   imports: [

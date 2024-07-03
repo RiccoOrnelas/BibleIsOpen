@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="home-container">
+    <h1>Veja o que estão compartilhando</h1>
+    <div class="search-container">
+        <form>
+            <fa-icon [icon]="search"></fa-icon>
+            <input type="text" placeholder="Pesquise por um tema" (input)="searching($event)">
+        </form>
+    </div>
+    <div *ngIf="devotionals.length > 0; else noDevotionals">
+        <div class="devotionals-container">
+            <div class="devotional" *ngFor="let devotional of devotionals">
+                <h2 class="title">{{devotional.title}}</h2>
+                <img src="{{baseApiUrl}}uploads/{{devotional.image}}" alt="{{devotional.title}}" />
+                <p class="date"> Em: {{devotional.created_at}}</p>
+                <p>Comentarios: {{devotional.coments?.length}}</p>
+                <p><a routerLink="devotional/{{devotional.id}}">Detalhes</a></p>
+            </div>
+        </div>
+    </div>
+    <ng-template #noDevotionals>
+        <h2>Não Há Devocionais por aqui</h2>
+    </ng-template>
+</div>

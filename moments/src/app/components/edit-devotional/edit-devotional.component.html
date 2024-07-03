@@ -1,0 +1,7 @@
+<div *ngIf="moment">
+    <h2>
+        Editando o Devocional: <span>{{ moment.title }}</span>!
+    </h2>
+    <app-devotional-form [devotionalData]="moment" [btnText]="btnText"
+        (onSubmit)="editHandler($event)"></app-devotional-form>
+</div>

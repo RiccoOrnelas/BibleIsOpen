@@ -1,0 +1,78 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-container h1 {
+    margin-bottom: 0.5em;
+}
+
+.devotionals-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.devotional {
+    width: 32%;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.devotional img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.devotional h3,
+.devotional p {
+    margin-bottom: 1em;
+}
+
+.devotional .date {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+a {
+    color: #118fd2;
+    padding: 0.3em 0.6em;
+}
+
+a:hover {
+    background-color: #efefef;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.search-container form {
+    width: 30%;
+    position: relative;
+}
+
+.search-container fa-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.search-container input {
+    padding: 0.5em;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 15px;
+}

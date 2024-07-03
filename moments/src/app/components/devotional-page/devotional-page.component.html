@@ -1,0 +1,14 @@
+<div class="devotional">
+    <h1>{{moment?.title}}</h1>
+    <img src="{{baseApiUrl}}uploads/{{moment?.image}}" alt="{{moment?.title}}" />
+    <p class="legend"> {{moment?.created_at}} </p>
+    <p class="description" [innerHTML]='moment?.description'></p>
+    <div class="butons">
+        <button class='btn com' (click)="Comment()"> <fa-icon [icon]="faComment"></fa-icon> Comentar</button>
+        <button class="btn edit" (click)="Edit()"> <fa-icon [icon]="faEdit"></fa-icon> Editar
+        </button>
+        <button class='btn del' (click)="Delete()"> <fa-icon [icon]="faTimes"></fa-icon>Deletar Devocional</button>
+    </div>
+
+
+</div>

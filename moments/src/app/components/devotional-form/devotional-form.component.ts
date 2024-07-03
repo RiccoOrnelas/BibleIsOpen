@@ -10,13 +10,14 @@ import { Moment } from '../../moments';
 export class DevotionalFormComponent implements OnInit {
   @Input() btnText!: string;
   @Output() onSubmit = new EventEmitter<Moment>();
+  @Input() devotionalData: Moment | null = null
   devotionalForm!: FormGroup
   constructor() { }
   ngOnInit(): void {
     this.devotionalForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
+      id: new FormControl(this.devotionalData ? this.devotionalData.id : '', [Validators.required]),
+      title: new FormControl(this.devotionalData ? this.devotionalData.title : '', [Validators.required]),
+      description: new FormControl(this.devotionalData ? this.devotionalData.description : '', [Validators.required]),
       image: new FormControl('', []),
     })
   }
